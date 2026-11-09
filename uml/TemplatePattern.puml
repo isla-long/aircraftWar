@@ -1,0 +1,35 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class GameTemplate{
+#  timer:Timer
+# timeInterval:int
++ action():void
++ {abstract}observerAddAction():void
++ {abstract}enemyCreateAction():void
++ {abstract}timeAction():void
++ {abstract}shootAction():void
++ {abstract}bulletsMoveAction():void
++ {abstract} musicPlay():void
++ {abstract}aircraftsMoveAction():void
++ {abstract}crashCheckAction():void
++ {abstract}postProcessAction():void
++ {abstract}checkResultAction():void
+}
+
+class game{
++ observerAddAction():void
++ enemyCreateAction():void
++ timeAction():void
++ shootAction():void
++ bulletsMoveAction():void
++  musicPlay():void
++ aircraftsMoveAction():void
++ crashCheckAction():void
++ postProcessAction():void
++ checkResultAction():void
+}
+
+GameTemplate <-- game
+
+@enduml

@@ -1,0 +1,63 @@
+@startuml
+interface EnemyFactory{
+    + createAircraft()
+}
+class MobEnemyFactory{
+    + createAircraft(int locationX, int locationY, int speedX, int speedY, int hp):MobEnemy
+}
+class EliteEnemyFactory{
+    + createAircraft(int locationX, int locationY, int speedX, int speedY, int hp):EliteEnemy
+}
+class ElitePlusEnemyFactory{
+    + createAircraft(int locationX, int locationY, int speedX, int speedY, int hp):ElitePlusEnemy
+}
+class EliteProEnemyFactory{
+    + createAircraft(int locationX, int locationY, int speedX, int speedY, int hp):EliteProEnemy
+}
+class BossEnemyFactory{
+    + createAircraft(int locationX, int locationY, int speedX, int speedY, int hp):BossEnemy
+}
+EnemyFactory <|-- MobEnemyFactory
+EnemyFactory <|-- EliteProEnemyFactory
+EnemyFactory <|-- ElitePlusEnemyFactory
+EnemyFactory <|-- EliteEnemyFactory
+EnemyFactory <|-- BossEnemyFactory
+
+abstract class Enemy{
+    + Enemy(int locationX, int locationY, int speedX, int speedY, int hp)
+    + forward():void
+    + shoot():List<BaseBullet>
+}
+class MobEnemy {
+    + MobEnemy(int locationX, int locationY, int speedX, int speedY, int hp)
+    + forward():void
+    + shoot():List<BaseBullet>
+}
+class EliteEnemy {
+    + EliteEnemy(int locationX, int locationY, int speedX, int speedY, int hp)
+    + forward():void
+    + shoot():List<BaseBullet>
+}
+class ElitePlusEnemy {
+    + ElitePlusEnemy(int locationX, int locationY, int speedX, int speedY, int hp)
+    + forward():void
+    + shoot():List<BaseBullet>
+}
+class EliteProEnemy {
+    + EliteProEnemy(int locationX, int locationY, int speedX, int speedY, int hp)
+    + forward():void
+    + shoot():List<BaseBullet>
+}
+class BossEnemy {
+    + BossEnemy(int locationX, int locationY, int speedX, int speedY, int hp)
+    + forward():void
+    + shoot():List<BaseBullet>
+}
+
+EnemyFactory ..> Enemy
+Enemy <|-- MobEnemy
+Enemy <|-- EliteEnemy
+Enemy <|-- ElitePlusEnemy
+Enemy <|-- EliteProEnemy
+Enemy <|-- BossEnemy
+@enduml

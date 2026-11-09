@@ -1,0 +1,27 @@
+package edu.hitsz.aircraft;
+
+import edu.hitsz.bullet.BaseBullet;
+import edu.hitsz.bullet.EnemyBullet;
+import edu.hitsz.bullet.HeroBullet;
+
+import java.util.LinkedList;
+import java.util.List;
+
+public class DoubleStrategy implements Stratege{
+    private static final int shootNum = 2;
+    public LinkedList<BaseBullet> makeBullets(int x,int y,int distance, int speed, int power,AbstractAircraft aircraft){
+        LinkedList<BaseBullet> res = new LinkedList<>();
+        BaseBullet bullet;
+
+        for(int i=0; i<shootNum; i++){
+            double angleDegrees = i * (360.0 / shootNum);
+            double angleRadians = Math.toRadians(angleDegrees);
+            // 子弹发射位置相对飞机位置向前偏移
+            // 多个子弹横向分散
+            if(aircraft instanceof Enemy) bullet = new EnemyBullet(x + (i*2 - shootNum + 1)*10,y, 0, speed, power);
+            else bullet = new HeroBullet(x + (i*2 - shootNum + 1)*10,y, 0, speed, power);
+            res.add(bullet);
+        }
+        return res;
+    }
+}

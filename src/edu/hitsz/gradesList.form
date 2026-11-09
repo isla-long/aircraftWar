@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="edu.hitsz.gradesList">
+  <grid id="27dc6" binding="gradespane" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="500" height="400"/>
+    </constraints>
+    <properties>
+      <background color="-1033"/>
+      <foreground color="-15395562"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <component id="842d3" class="javax.swing.JLabel" binding="gradeshead">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <foreground color="-15395562"/>
+          <text value="成绩单"/>
+        </properties>
+      </component>
+      <scrollpane id="da769" binding="gradeslistpane">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-1033"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="49ecf" class="javax.swing.JTable" binding="gradeslist">
+            <constraints/>
+            <properties>
+              <background color="-1033"/>
+              <foreground color="-15395562"/>
+              <gridColor color="-9209481"/>
+              <selectionBackground color="-1033"/>
+            </properties>
+          </component>
+        </children>
+      </scrollpane>
+    </children>
+  </grid>
+</form>

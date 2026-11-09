@@ -1,0 +1,8 @@
+@startuml
+class HeroAircraft{
+    - {static}instance
+
+    - HeroAircraft(int locationX, int locationY, int speedX, int speedY, int hp)
+    + {static} getInstance():instance
+}
+@enduml

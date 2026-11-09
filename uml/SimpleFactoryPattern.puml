@@ -1,0 +1,39 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class PropSimpleFactory{
++ {static} createProp():prop
+}
+
+abstract class prop{
++ prop(int locationX, int locationY, int speedX, int speedY)
++ be_used(Game game)
+}
+class prop_blood{
+    + prop_blood(int locationX, int locationY, int speedX, int speedY)
+    + be_used(Game game):void
+}
+class prop_bomb{
+    + prop_bomb(int locationX, int locationY, int speedX, int speedY)
+    + be_used(Game game):void
+}
+class prop_bullet{
+    + prop_bullet(int locationX, int locationY, int speedX, int speedY)
+    + be_used(Game game):void
+}
+class prop_bullet_plus{
+    + prop_bullet_plus(int locationX, int locationY, int speedX, int speedY)
+    + be_used(Game game):void
+}
+class prop_freeze{
+    + prop_freeze(int locationX, int locationY, int speedX, int speedY)
+    + be_used(Game game):void
+}
+prop <|-- prop_blood
+prop <|-- prop_bullet
+prop <|-- prop_bullet_plus
+prop <|-- prop_bomb
+prop <|-- prop_freeze
+
+PropSimpleFactory o..> prop
+@enduml

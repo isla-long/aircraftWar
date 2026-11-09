@@ -1,0 +1,34 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface observer{
++ onBomb(Game game)
++ onFreeze(Game game)
+}
+
+class propobserver{
++ onBomb(Game game)
++ onFreeze(Game game)
+}
+
+observer <.. propobserver
+abstract class prop{
++ propobserverList : List<propobserver>
++ addobs(propobserver obs)
+- removeobs(propobserver obs)
++ {abstract} notifyobservers(Game game)
+}
+
+class prop_bomb{
++ notifyobservers(Game game)
+}
+
+class prop_freeze{
++ notifyobservers(Game game)
+}
+
+prop <-- prop_freeze
+prop <-- prop_bomb
+
+observer <--o prop
+@enduml
